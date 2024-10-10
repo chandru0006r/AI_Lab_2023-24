@@ -1,6 +1,6 @@
 # Ex.No: 3  Implementation of Minimax Search
-### DATE: 12/09/2024                                                    
-### REGISTER NUMBER : 212222040029
+### DATE: 12/09/2024                                                                           
+### REGISTER NUMBER : 2122222040029
 ### AIM: 
 Write a mini-max search algorithm to find the optimal value of MAX Player from the given graph.
 ### Algorithm:
@@ -15,33 +15,36 @@ Write a mini-max search algorithm to find the optimal value of MAX Player from t
 9. Stop the program. 
 
 ### Program:
-
 ```
 import math
-def minimax (curDepth, nodeIndex,
-             maxTurn, scores,
-             targetDepth):
+
+
+def minimax(curDepth, nodeIndex,
+            maxTurn, scores,
+            targetDepth):
     # base case : targetDepth reached
     if (curDepth == targetDepth):
         return scores[nodeIndex]
     if (maxTurn):
         return max(minimax(curDepth + 1, nodeIndex * 2,
-                    False, scores, targetDepth),
+                           False, scores, targetDepth),
                    minimax(curDepth + 1, nodeIndex * 2 + 1,
-                    False, scores, targetDepth))
-     
+                           False, scores, targetDepth))
+
     else:
         return min(minimax(curDepth + 1, nodeIndex * 2,
-                     True, scores, targetDepth),
+                           True, scores, targetDepth),
                    minimax(curDepth + 1, nodeIndex * 2 + 1,
-                     True, scores, targetDepth))
-     
+                           True, scores, targetDepth))
+
+
 # Driver code
 scores = [3, 5, 2, 9, 12, 5, 23, 20]
-treeDepth = math.log(len(scores), 2) # calculate depth of node  log 8 (base 2) = 3)
-print("The optimal value is : ", end = "")
-  print(minimax(0, 0, True, scores, treeDepth))
+treeDepth = math.log(len(scores), 2)
+print("The optimal value is : ", end="")
+print(minimax(0, 0, True, scores, treeDepth))
 ```
+
 
 
 
@@ -52,7 +55,7 @@ print("The optimal value is : ", end = "")
 
 
 ### Output:
-![WhatsApp Image 2024-09-12 at 09 30 08_88f9194f](https://github.com/user-attachments/assets/bf9aaf0c-c409-4401-988b-2d10499f9487)
+![image](https://github.com/user-attachments/assets/367320dd-215a-43c3-89c0-9d9e79789ff5)
 
 
 
